@@ -1,0 +1,108 @@
+Q)
+[while문 작성]
+1~100사이 정수를 user가 입력하게 하며, 
+해당 범위 난수 중 하나를 컴퓨터가 정해 user 입력 수와 컴퓨터가 정한 수가 일치하면 정답,
+일치하지 않으면 좀 더 크거나 작은 수로 입력하라는 문구 띄우기
+
+  1) 1~100 사이 정수를 user가 입력하게 한다. (scanner 사용)
+  2) 1~100 사이 난수를 컴퓨터가 하나 정하게 한다. (Math.random 사용)
+  3) while문으로 조건 지정
+  4) 정답일 경우, 정답 표시
+
+A)
+package practice;
+import java.util.*;
+
+public class java {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int input = 0, answer = 0; //변수 초기
+		
+		Scanner scanner = new Scanner(System.in); //사용자에게 수 입력받기 위함 
+		answer = (int)(Math.random()*100) + 1; //100개의 난수 //정수로 만들기 위해 +1
+		
+		System.out.print("1과 100사이 정수 입력 >"); //while문 반복될때마다 나타나지 않음. 밑에 두번 중복해서 써줘야하는 단점이 있다. (코드 중복) 
+		input = scanner.nextInt(); //사용자에게 수 입력받기 
+		
+		while (input != answer) { //input과 answer이 같지 않을 때마다 반복 
+			if(input > answer) {
+				System.out.println("좀 더 작은 수 ");
+			} else if (input < answer) {
+				System.out.println("좀 더 큰 수 ");
+			}
+			
+			System.out.println("1과 100사이 정수 >"); //while문이 반복될때마다 해당 문구가 보여진다. 
+			input = scanner.nextInt(); //사용자가 입력하게 함 
+		}
+		System.out.println("정답 "); //while문 다 돌고 input == answer 일 때, 정답 표시 
+
+	}
+
+}
+
+result)
+1과 100사이 정수 입력 >50
+좀 더 작은 수 
+1과 100사이 정수 >
+40
+좀 더 큰 수 
+1과 100사이 정수 >
+45
+좀 더 큰 수 
+1과 100사이 정수 >
+46
+좀 더 큰 수 
+1과 100사이 정수 >
+47
+정답
+######################################
+Q)
+위의 문제를 do while문으로 바꾸기
+(코드의 중복을 피할 수 있다, 사용자에게 입력 받을 때 유용)
+
+A)
+package practice;
+
+import java.util.*;
+
+public class java {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int input = 0, answer = 0; //변수 초기
+		
+		Scanner scanner = new Scanner(System.in); //사용자에게 수 입력받기 위함 
+		answer = (int)(Math.random()*100) + 1; //100개의 난수 //정수로 만들기 위해 +1
+		
+		do {
+			System.out.print("1과 100사이 정수 입력 >"); //while문 반복될때마다 나타남. (while문에 비해 코드 중복 피할 수 있음) 
+			input = scanner.nextInt(); //사용자에게 수 입력받기
+			
+			if (input > answer) {
+				System.out.println("좀 더 작은 수 ");
+			} else if (input < answer) {
+				System.out.println("좀 더 큰 수 ");
+			}
+		} while(input != answer);
+		
+		System.out.println(("정답 "));
+
+		}
+}
+
+result)
+1과 100사이 정수 입력 >50
+좀 더 큰 수 
+1과 100사이 정수 입력 >60
+좀 더 큰 수 
+1과 100사이 정수 입력 >80
+좀 더 작은 수 
+1과 100사이 정수 입력 >70
+좀 더 작은 수 
+1과 100사이 정수 입력 >68
+좀 더 작은 수 
+1과 100사이 정수 입력 >65
+정답
