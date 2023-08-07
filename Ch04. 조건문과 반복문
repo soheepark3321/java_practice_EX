@@ -1,3 +1,5 @@
+[while, do while]
+
 Q)
 [while문 작성]
 1~100사이 정수를 user가 입력하게 하며, 
@@ -106,3 +108,303 @@ result)
 좀 더 작은 수 
 1과 100사이 정수 입력 >65
 정답
+-------------------------------------------------------------------------------------------------------------------------------------------
+Q)
+(while - break문 사용)
+sum > 100 조건 시 반복문을 빠져나와 각각 i와 sum 표시
+
+A)
+package practice;
+
+import java.util.*;
+
+public class java {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int sum = 0, i = 0;
+		
+		while(true) {
+			if(sum > 100)
+				break; //sum > 100 조건 달성 시 조건문 빠져나옴.
+			++i; //i 증가 
+			sum += i; //sum = sum + i;
+		}
+		
+		System.out.println("i=" + i);
+		System.out.println("sum=" + sum);
+
+		}
+}
+
+result)
+i=14
+sum=105
+######################################
+Q)
+(break문 사용 x)
+
+A)
+package practice;
+import java.util.*;
+
+public class java {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int sum = 0, i = 0;
+		
+		while(sum <= 100) { //sum이 100보다 작거나 같을 경우 조건문 빠져나옴.
+			++i; //i 증가 
+			sum += i; //sum = sum + i;
+		}
+		
+		System.out.println("i=" + i);
+		System.out.println("sum=" + sum);
+
+		}
+}
+
+result)
+i=14
+sum=105
+######################################
+Q)
+(for문으로 바꾸기)
+
+A)
+package practice;
+import java.util.*;
+
+public class java {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int sum = 0, i = 0;
+		
+		for(;;) { //for문의 무한 반복 //for(;true;)
+			if(sum > 100)
+				break;
+			
+			++i; //i 증가 
+			sum += i; //sum = sum + i;
+		}
+		
+		System.out.println("i=" + i);
+		System.out.println("sum=" + sum);
+
+		}
+}
+
+result)
+i=14
+sum=105
+-------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------
+[continue]
+자신이 포함된 반복문의 끝으로 이동 - 다음 반복으로 넘어감
+전체 반복 중 특정 조건시 반복 건너뛸 때 유용
+
+Q)
+(continue 사용)
+1~10까지의 수 중 3의 배수 제외한 나머지 수 출력
+
+A)
+package practice;
+import java.util.*;
+
+public class java {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		for(int i=0; i <=10; i++) {
+			if (i%3==0)
+				continue;
+			System.out.println(i);
+		}
+
+		}
+}
+
+result)
+1
+2
+4
+5
+7
+8
+10
+-------------------------------------------------------------------------------------------------------------------------------------------
+Q)
+square, square root, log 세 메뉴를 보여주고 사용자가 선택하게 해야 함.
+메뉴 잘못 선택 경우, continue문으로 다시 메뉴 보여주고,
+종료(0) 선택 경우, break문으로 반복 벗어서 프로그램 종료
+
+A)
+package practice;
+import java.util.*;
+
+public class java {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int menu = 0, num = 0;
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		while(true) {
+			System.out.println("(1) square");
+			System.out.println("(2) square root");
+			System.out.println("(3) log");
+			System.out.println("원하는 메뉴(1~3)를 선택하세요. (종료:0) >");
+			
+			String tmp = scanner.nextLine();
+			menu = Integer.parseInt(tmp);
+			
+			if(menu == 0) {
+				System.out.println("프로그램을 종료합니다.");
+				break;
+			} else if(!(1 <= menu && menu <= 3)) {
+				System.out.println("메뉴를 잘못 선택하셨습니다.(종료는 0)");
+				continue;
+			}
+			System.out.println("선택하신 메뉴는 " + menu + "번입니다.");
+		}
+
+		}
+}
+
+result)
+(1) square
+(2) square root
+(3) log
+원하는 메뉴(1~3)를 선택하세요. (종료:0) >
+5
+메뉴를 잘못 선택하셨습니다.(종료는 0)
+(1) square
+(2) square root
+(3) log
+원하는 메뉴(1~3)를 선택하세요. (종료:0) >
+1
+선택하신 메뉴는 1번입니다.
+(1) square
+(2) square root
+(3) log
+원하는 메뉴(1~3)를 선택하세요. (종료:0) >
+0
+프로그램을 종료합니다.
+-------------------------------------------------------------------------------------------------------------------------------------------
+Q)
+2단 구구단 출력 중 4번째까지만 출력 가능하도록 하기
+
+A)
+package practice;
+import java.util.*;
+
+public class java {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Loop1 : for(int i = 2; i <=9; i++) {
+			for(int j = 1; j <= 9; j++) {
+				if(j == 5)
+					break Loop1;
+				System.out.println(i+"*"+j+"="+i*j);
+			}
+			System.out.println();
+		}
+
+		}
+}
+
+result)
+2*1=2
+2*2=4
+2*3=6
+2*4=8
+-------------------------------------------------------------------------------------------------------------------------------------------
+Q)
+메뉴 선택 문제 + 계산 문제,
+메뉴 선택 후 계산할 값 입력하면 결과값 보여주기.
+계산 종료 : 0, 전체 종료 : 99
+
+A)
+package practice;
+import java.util.*;
+
+public class java {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int menu = 0, num = 0;
+		
+		Scanner scanner = new Scanner(System.in);
+		
+		outer :
+			while (true) {
+				System.out.println("(1) square");
+				System.out.println("(2) square root");
+				System.out.println("(3) log");
+				System.out.print("원하는 메뉴(1~3)을 선택하세요. (종료:0) > ");
+				
+				String tmp = scanner.nextLine();
+				menu = Integer.parseInt(tmp);
+				
+				if(menu == 0) {
+					System.out.println("프로그램 종료 ");
+					break;
+				} else if(!(1 <= menu && menu <= 3)) {
+					System.out.println("잘못 선택 (종료 0)");
+					continue;
+				}
+				
+				for(;;) {
+					System.out.print("계산할 값 입력. (계산 종료 : 0, 전체 종료 : 99) >");
+					tmp = scanner.nextLine();
+					num = Integer.parseInt(tmp);
+					
+					if(num == 0)
+						break;
+					
+					if(num == 99)
+						break outer;
+					
+					switch(menu) {
+					case 1: 
+						System.out.println("result="+ num*num);
+						break;
+					case 2:
+						System.out.println("result="+ Math.sqrt(num));
+						break;
+					case 3:
+						System.out.println("result="+ Math.log(num));
+						break;
+					}
+				}
+			}
+
+		}
+}
+
+result)
+(1) square
+(2) square root
+(3) log
+원하는 메뉴(1~3)을 선택하세요. (종료:0) > 1
+계산할 값 입력. (계산 종료 : 0, 전체 종료 : 99) >3
+result=9
+계산할 값 입력. (계산 종료 : 0, 전체 종료 : 99) >1
+result=1
+계산할 값 입력. (계산 종료 : 0, 전체 종료 : 99) >0
+(1) square
+(2) square root
+(3) log
+원하는 메뉴(1~3)을 선택하세요. (종료:0) > 1
+계산할 값 입력. (계산 종료 : 0, 전체 종료 : 99) >99
