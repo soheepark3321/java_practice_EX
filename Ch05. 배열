@@ -240,3 +240,40 @@ ball [3] = 34
 ball [4] = 2
 ball [5] = 42
 --------------------------------------------------------------
+--------------------------------------------------------------
+[String 배열]
+
+Q)
+배열 이용, 가위바위보 10번 랜덤 출력
+
+A)
+package input;
+import java.util.*;
+
+public class Variable {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String[] strarr = {"가위", "바위", "보"};
+		System.out.println(Arrays.toString(strarr));
+		
+		for(int i = 0; i < 10; i++) {
+			int tmp = (int)(Math.random()*3); //각 가위바위보는 0,1,2로 저장되어 있기 때문에 float로 계산되어진다. int로 변형.
+			System.out.println(strarr[tmp]);
+		}
+	}
+}
+
+result)
+[가위, 바위, 보]
+가위
+보
+바위
+보
+가위
+보
+바위
+바위
+가위
+바위
+--------------------------------------------------------------
+[커맨드 라인 입력받기]
