@@ -139,3 +139,25 @@ public class ex2_4 {
 	}
 
 }
+
+
+ex 2-6)
+package CH02_Variable;
+import java.util.*;
+
+public class ex2_4 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.print("두자리 정수 하나 입력 >");
+		
+		String input = scanner.nextLine();
+		int num = Integer.parseInt(input);
+		
+		System.out.println("입력내용 : " + input);
+		System.out.printf("num=%d%n", num);
+	}
+
+}
