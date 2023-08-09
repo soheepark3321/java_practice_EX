@@ -161,3 +161,60 @@ public class ex2_4 {
 	}
 
 }
+
+
+ex 2-7)
+package CH02_Variable;
+import java.util.*;
+
+public class ex2_1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		char ch = 'A'; //ch에 'A' 저장
+		int code = (int)ch; //위의 코드에서 'A'의 유니코드를 알고 싶을 때, int로 변환하면 알 수 있음.
+		
+		System.out.printf("%c=%d(%#x)%n", ch, code, code);
+		
+		char hch = '가';
+		System.out.printf("%c=%d(%#x)%n", hch, (int)hch, (int)hch);
+
+	}
+
+}
+
+
+ex 2-8)
+package CH02_Variable;
+import java.util.*;
+
+public class ex2_1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println('\''); //작은 따옴표 출력 : \'
+		System.out.println("abc\t123\b456"); //\t으로 띄어씌기 / \b(다음 페이지 시작 부분으로 넘겨짐)
+		System.out.println('\n'); //개행 
+		System.out.println("\"Hello Wold\""); //큰 따옴표 출력 : \"
+		System.out.println("c:\\"); //역슬래쉬 출력 : \\
+	}
+
+}
+
+
+ex 2-12)
+package CH02_Variable;
+import java.util.*;
+
+public class ex2_1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		double d = 85.4;
+		int score = (int)d;
+		
+		System.out.println("score="+score);
+		System.out.println("d="+d);
+	}
+
+}
