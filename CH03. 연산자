@@ -1,1 +1,187 @@
+ex 3-12)
+package practice;
+import java.util.*;
 
+public class java {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		char c1='a'; //'a'=97
+		char c2=c1; //c2='a'=97
+		char c3=' '; //c3은 공백으로 초기화 
+		
+		int i = c1 + 1; //(c1)97 + 1 = 98 = i = 'b'
+		
+		c3 = (char) (c1 + 1); //char로 형변환 / c1 + 1 = 98 = 'b'
+		c2++;
+		c2++; //c2=97 -> 두 번 증가 -> 99 = c3 = 'c'
+		
+		System.out.println("i=" + i);
+		System.out.println("c2=" + c2);
+		System.out.println("c3=" + c3);
+
+		}
+}
+
+
+ex 3-13)
+package practice;
+import java.util.*;
+
+public class java {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		char c1='a'; //'a'=97
+		char c2=(char)(c1+1); 
+		char c3='a'+1;
+		
+		System.out.println(c2);
+
+		}
+}
+
+
+ex 3-14)
+package practice;
+import java.util.*;
+
+public class java {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		char c = 'a'; //char type의 변수 c를 'a'값 (유니코드 97)으로 초기화 
+		for(int i=0; i<26; i++) {
+			System.out.print(c++); //a서부터 증가되어 26번째 알파벳이 나올 때까지 출력 
+		}
+		System.out.println(); //다음 코드 출력을 위해 줄바꿈 
+		
+		c = 'A'; //char type의 변수 c를 'A'(유니코드 65)값으로 초기화 
+		for(int i=0; i<26; i++) {
+			System.out.print(c++); //a서부터 증가되어 26번째 알파벳이 나올 때까지 출력 
+		}
+		System.out.println(); //다음 코드 출력을 위해 줄바꿈 
+		
+		c = '0'; //char type의 변수 c를 '0'(유니코드 48)값으로 초기화 
+		for(int i=0; i<10; i++) {
+			System.out.print(c++); //a서부터 증가되어 10번째 숫자가 나올 때까지 출력 
+		}
+		System.out.println(); //다음 코드 출력을 위해 줄바꿈 
+
+		}
+}
+
+
+ex 3-18)
+package practice;
+import java.util.*;
+
+public class java {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		double pi = 3.141592;
+		double shortPi = Math.round(pi*1000)/1000.0;
+		System.out.println(shortPi);
+
+		}
+}
+
+ex 3-19)
+package practice;
+import java.util.*;
+
+public class java {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int x=10;
+		int y=8;
+		
+		System.out.printf("%d을 %d로 나누면, %n", x, y);
+		System.out.printf("몫은 %d이고, 나머지는 %d입니다.", x/y, x%y);
+
+		}
+}
+
+
+ex 3-20)
+package practice;
+import java.util.*;
+
+public class java {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		System.out.println(-10%8);
+		System.out.println(10%-8);
+		System.out.println(-10%-8);
+
+		}
+}
+
+
+ex 3-25)
+package practice;
+import java.util.*;
+
+public class java {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner scanner = new Scanner(System.in);
+		char ch = ' '; //공백으로 초기화 
+		
+		System.out.printf("문자를 하나 입력하세요. > ");
+		
+		String input = scanner.nextLine();
+		ch = input.charAt(0);
+		
+		if('0'<=ch && ch<='9') {
+			System.out.printf("숫자. %n");
+		}
+		
+		if(('a'<=ch && ch<='z') || ('A'<=ch && ch<='Z')) {
+			System.out.printf("문자. %n");
+		}
+		}
+}
+
+
+ex 3-32)
+package practice;
+import java.util.*;
+
+public class java {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int x, y, z;
+		int absX, absY, absZ;
+		char signX, signY, signZ;
+		
+		x=10;
+		y=-5;
+		z=0;
+		
+		absX = x >= 0 ? x : -x; //x=10
+		absY = y >= 0 ? y : -y; //y=5
+		absZ = z >= 0 ? z : -z; //z=0
+		
+		signX=x > 0 ? '+' : ( x==0 ? ' ' : '-'); //+
+		signY=y > 0 ? '+' : ( y==0 ? ' ' : '-'); //-
+		signZ=z > 0 ? '+' : ( z==0 ? ' ' : '-'); //' '
+		
+		System.out.printf("x=%c%d%n", signX, absX); //x=+10
+		System.out.printf("x=%c%d%n", signY, absY); //-5
+		System.out.printf("x=%c%d%n", signZ, absZ); // 0
+		}
+}
