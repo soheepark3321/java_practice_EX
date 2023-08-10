@@ -1,0 +1,84 @@
+ex 3-1)
+package CH02_Variable;
+//import java.util.*;
+
+public class ex2_1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int i=5;
+		i++; //== i=i+1;
+		System.out.println(i); //i=6
+		
+		i=5;
+		++i;
+		System.out.println(i); //i=6
+	}
+
+}
+
+
+ex 3-2)
+package CH02_Variable;
+//import java.util.*;
+
+public class ex2_1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int i=5, j=0;
+		
+		j=i++;
+		System.out.println("j=i++; 실행 후, i=" + i + ", j=" + j);
+		
+		i=5;
+		j=0;
+		
+		j=++i;
+		System.out.println("j=i++; 실행 후, i=" + i + ", j=" + j);
+	}
+
+}
+
+
+ex 3-3)
+package CH02_Variable;
+//import java.util.*;
+
+public class ex2_1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int i=5, j=5;
+		
+		System.out.println(i++);
+		System.out.println(++j);
+		System.out.println("i = " + i + ", j = " + j);
+	}
+
+}
+
+
+ex 3-5)
+package CH02_Variable;
+//import java.util.*;
+
+public class ex2_1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int a=10;
+		int b=4;
+		
+		System.out.printf("%d + %d = %d%n", a, b, a+b);
+		System.out.printf("%d - %d = %d%n", a, b, a-b);
+		System.out.printf("%d * %d = %d%n", a, b, a*b);
+		System.out.printf("%d / %d = %d%n", a, b, a/b);
+		System.out.printf("%d / %f = %f%n", a, (float)b, a/(float)b);
+	}
+
+}
